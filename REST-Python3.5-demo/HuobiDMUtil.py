@@ -83,6 +83,7 @@ def api_key_post(url, request_path, params, ACCESS_KEY, SECRET_KEY):
                       'Timestamp': timestamp}
 
     host_url = url
+    
     #host_name = urlparse.urlparse(host_url).hostname
     host_name = urllib.parse.urlparse(host_url).hostname
     host_name = host_name.lower()

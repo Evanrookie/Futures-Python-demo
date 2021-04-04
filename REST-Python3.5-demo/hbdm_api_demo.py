@@ -10,53 +10,22 @@ from HuobiDMService import HuobiDM
 from pprint import pprint
 
 #### input huobi dm url
-URL = ''
+URL = 'api.btcgateway.pro'
 
 ####  input your access_key and secret_key below:
-ACCESS_KEY = ''
-SECRET_KEY = ''
+ACCESS_KEY = '10f8d42d-49959935-bg2hyw2dfg-faaad'
+SECRET_KEY = '770611ca-19b79818-737bc1fe-1abe3'
 
 
 dm = HuobiDM(URL, ACCESS_KEY, SECRET_KEY)
 
 #### another account:
 #dm2 = HuobiDM(URL, "ANOTHER ACCOUNT's ACCESS_KEY", "ANOTHER ACCOUNT's SECRET_KEY")
-
+print(dm)
 
 
 
 #%%  market data api ===============
-
-print (u' 获取合约信息 ')
-pprint (dm.get_contract_info(symbol="BTC", contract_type="quarter"))
-pprint (dm.get_contract_info(contract_code="BTC181228"))
-
-print (u' 获取合约指数信息 ')
-pprint (dm.get_contract_index("BTC"))
-
-print (u' 获取合约最高限价和最低限价 ')
-pprint (dm.get_contract_price_limit(symbol='BTC', contract_type='quarter'))
-pprint (dm.get_contract_price_limit(contract_code='BTC181228'))
-
-print (u' 获取当前可用合约总持仓量 ')
-pprint (dm.get_contract_open_interest(symbol='BTC', contract_type='quarter'))
-pprint (dm.get_contract_open_interest(contract_code='BTC181228'))
-
-print (u' 获取行情深度数据 ')
-pprint (dm.get_contract_depth(symbol='BTC_CW', type='step0'))
-
-print (u' 获取K线数据 ')
-pprint (dm.get_contract_kline(symbol='BTC_CW', period='60min', size=20))
-
-print (u' 获取聚合行情 ')
-pprint (dm.get_contract_market_merged('BTC_CW'))
-
-print (u' 获取市场最近成交记录 ')
-pprint (dm.get_contract_trade('BTC_CW'))
-
-print (u' 批量获取最近的交易记录 ')
-pprint (dm.get_contract_batch_trade(symbol='BTC_CW', size=3))
-
 
 
 #%% trade / account api  ===============
@@ -105,7 +74,6 @@ pprint(dm.get_contract_open_orders(symbol='BTC'))
 
 print (u' 获取合约历史委托 ')
 pprint (dm.get_contract_history_orders(symbol='BTC', trade_type=0, type=1, status=0, create_date=7))
-
 
 
 
