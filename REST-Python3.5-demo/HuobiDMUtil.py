@@ -86,6 +86,7 @@ def api_key_post(url, request_path, params, ACCESS_KEY, SECRET_KEY):
     
     #host_name = urlparse.urlparse(host_url).hostname
     host_name = urllib.parse.urlparse(host_url).hostname
+    print(host_name)
     host_name = host_name.lower()
     params_to_sign['Signature'] = createSign(params_to_sign, method, host_name, request_path, SECRET_KEY)
     url = host_url + request_path + '?' + urllib.parse.urlencode(params_to_sign)
